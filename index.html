@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.5/font/bootstrap-icons.css">
+    <title>Music Player</title>
+</head>
+
+<body>
+    <nav>
+        <div class="main-nav container">
+            <h2>Music Player</h2>
+            <ul>
+                <a href="#">Home</a>
+                <a href="#">Discover</a>
+                <a href="#">Explore Premium</a>
+                <a href="#"><i class="bi bi-person-circle"></i></a>
+            </ul>
+        </div>
+    </nav>
+    <div class="bottom-bar">
+        <div class="master-play container">
+            <div class="waves" id="waves">
+                <div class="wave1"></div>
+                <div class="wave2"></div>
+                <div class="wave3"></div>
+            </div>
+            <div class="play-details">
+                <img src="posters/chichore.jpeg" alt="" id="poster-master">
+                <div id="title">
+                    <p>Khariyaat</p>
+                    <div id="subtitle">Arijit Singh</div>
+                </div>
+            </div>
+            <div class="controls">
+                <i class="bi bi-skip-start-fill" id="before-play"></i>
+                <i class="bi bi-play-fill" id="play"></i>
+                <i class="bi bi-skip-end-fill" id="after-play"></i>
+            </div>
+            <div class="seek-bar">
+                <span id="start-time">0:00</span>
+                <div class="bar">
+                    <input type="range" id="seek" min="0" max="100">
+                    <div class="bar2" id="bar2"></div>
+                </div>
+                <span id="end-time">0:30</span>
+            </div>
+        </div>
+    </div>
+
+    <div class="song-body container">
+        <header>
+            <h1>Play All your fav Songs in just one place</h1>
+            <h4>Listen Different Genre songs</h4>
+        </header>
+        <div class="pop-songs">
+            <div class="head">
+                <h1>Popular Songs</h1>
+                <div class="lr">
+                    <i class="bi bi-arrow-left-square"></i>
+                    <i class="bi bi-arrow-right-square"></i>
+                </div>
+            </div>
+            <div class="songs">
+                <div class="songItem">
+                    
+                </div>
+                <!-- <li class="songItem">
+                    <div class="img_play">
+                        <img src="img/2.jpg" alt="">
+                        <i class="bi bi-play-circle-fill playlist-play" id="11"></i>
+                    </div>
+                    <h5>On My Way <br> 
+                        <div class="subtitle">Alan Walker</div>
+                    </h5>
+                </li> -->
+            </div>
+        </div>
+    </div>
+
+    <script src="app.js"></script>
+</body>
+
+</html>

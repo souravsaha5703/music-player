@@ -1,0 +1,259 @@
+@import url('https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@10..48,500&display=swap');
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+html,body{
+    width: 100%;
+    height: 100%;
+    font-family: 'Bricolage Grotesque', sans-serif;
+    background-color: #000000;
+}
+.container{
+    max-width: 1100px;
+    margin-inline: auto;
+    padding-inline: 25px;
+    overflow: hidden;
+}
+nav{
+    width: 100%;
+    height: 70px;
+    background-color: #011627;
+    display: flex;
+    align-items: center;
+    position: fixed;
+    top: 0;
+    z-index: 99;
+}
+.main-nav{
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+.main-nav h2{
+    color: #ee6c4d;
+    font-weight: 500;
+    margin-left: 20px;
+    font-size: 1.8rem;
+    cursor: pointer;
+}
+.main-nav ul{
+    display: flex;
+    gap: 50px;
+    list-style: none;
+    margin-right: 20px;
+}
+.main-nav ul a{
+    color: #e0fbfc;
+    text-decoration: none;
+    transition: all 0.3s ease-in;
+    font-size: 1.2rem;
+}
+.main-nav ul a:hover{
+    color: #ee6c4d;
+}
+.bottom-bar{
+    position: fixed;
+    bottom: 0;
+    width: 100%;
+    height: 70px;
+    background-color: #2b2d42;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+.bottom-bar .master-play{
+    width: 100%;
+    height: 100%;
+    display: flex;
+    align-items: center;
+}
+.master-play .waves{
+    position: relative;
+    width: 60px;
+    height: 50px;
+}
+.waves .wave1{
+    height: 40px;
+    width: 10px;
+    background-color: #98c1d9;
+    position: absolute;
+    bottom: 0;
+    transition: 0.3 linear;
+    border-radius: 3px 3px 0px 0px;
+}
+.waves .wave2{
+    height: 30px;
+    width: 10px;
+    background-color: #98c1d9;
+    position: absolute;
+    bottom: 0;
+    left: 12px;
+    transition: 0.3 linear;
+    border-radius: 3px 3px 0px 0px;
+}
+.waves .wave3{
+    height: 20px;
+    width: 10px;
+    background-color: #98c1d9;
+    position: absolute;
+    bottom: 0;
+    right: 0;
+    transition: 0.3 linear;
+    border-radius: 3px 3px 0px 0px;
+}
+.master-play:active .wave1{
+    animation: waves 0.5s linear infinite;
+}
+.master-play:active .wave2{
+    animation: waves 0.5s linear infinite;
+}
+.master-play:active .wave3{
+    animation: waves 0.5s linear infinite;
+}
+@keyframes waves{
+    0%{
+        height: 40px;
+    }
+    50%{
+        height: 10px;
+    }
+    100%{
+        height: 40px;
+    }
+}
+.master-play .play-details{
+    width: 150px;
+    height: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    margin-left: 50px;
+}
+.master-play .play-details img{
+    width: 50px;
+    height: 50px;
+}
+.master-play .play-details #title{
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+}
+.master-play .play-details #title p{
+    color: #e0fbfc;
+    font-weight: 400;
+    font-size: 20px;
+}
+.master-play .play-details #title #subtitle{
+    color: #adb5bd;
+    font-size: 10px;
+}
+.master-play .controls{
+    height: 100%;
+    width: 200px;
+    display: flex;
+    align-items: center;
+    justify-content: space-evenly;
+    margin-left: 50px;
+}
+.master-play .controls .bi{
+    font-size: 1.7rem;
+    color: #e0fbfc;
+}
+.master-play .seek-bar{
+    width: 100%;
+    height: 100%;
+    margin-left: 50px;
+    display: flex;
+    align-items: center;
+    justify-content: space-evenly;
+}
+.master-play .seek-bar #start-time{
+    font-size: 1rem;
+    color: #e0fbfc;
+    font-weight: 400;
+}
+.master-play .seek-bar #end-time{
+    font-size: 1rem;
+    color: #e0fbfc;
+    font-weight: 400;
+}
+.master-play .seek-bar .bar{
+    position: relative;
+    width: 50%;
+    height: 3px;
+    background-color: #011627;
+    margin: 0px 15px 0px 10px;
+}
+.master-play .seek-bar .bar .bar2{
+    position: absolute;
+    width: 50%;
+    height: 100%;
+    top: 0;
+    background-color: #ee6c4d;
+    transition: all 0.3s ease;
+}
+.master-play .bar input{
+    position: absolute;
+    width: 100%;
+    top: -7px;
+    left: 0;
+    cursor: pointer;
+    z-index: 99;
+    opacity: 0;
+}
+.song-body{
+    height: 100%;
+    border: 1px solid red;
+    margin-top: 70px;
+    display: flex;
+    flex-direction: column;
+}
+.song-body header{
+    position: relative;
+    width: 1100px;
+    height: 300px;
+    background-image: url(song\ back.jpg);
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center;
+}
+.song-body header h1{
+    position: absolute;
+    top: 40%;
+    left: 6%;
+    color: white;
+    font-weight: 400;
+    font-size: 2rem;
+}
+.song-body header h4{
+    position: absolute;
+    top: 60%;
+    left: 6%;
+    color: white;
+    font-weight: 400;
+    font-size: 1.4rem;
+}
+.song-body .pop-songs{
+    width: 100%;
+    height: fit-content;
+    display: flex;
+}
+.song-body .pop-songs .head{
+    width: 100%;
+    height: fit-content;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    margin-top: 20px;
+}
+.song-body .pop-songs .head h1{
+    color: #98c1d9;
+    font-size: 2rem;
+}
+.song-body .pop-songs .head .bi{
+    color: #98c1d9;
+    font-size: 2rem;
+}
