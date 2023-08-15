@@ -63,19 +63,20 @@ nav{
     display: flex;
     align-items: center;
     justify-content: center;
+    z-index: 999;
 }
-.bottom-bar .master-play{
+.bottom-bar #master-play{
     width: 100%;
     height: 100%;
     display: flex;
     align-items: center;
 }
-.master-play .waves{
+#master-play .waves{
     position: relative;
     width: 60px;
     height: 50px;
 }
-.waves .wave1{
+.waves .wave{
     height: 40px;
     width: 10px;
     background-color: #98c1d9;
@@ -84,33 +85,15 @@ nav{
     transition: 0.3 linear;
     border-radius: 3px 3px 0px 0px;
 }
-.waves .wave2{
+.waves .wave:nth-child(2){
     height: 30px;
-    width: 10px;
-    background-color: #98c1d9;
-    position: absolute;
-    bottom: 0;
-    left: 12px;
-    transition: 0.3 linear;
-    border-radius: 3px 3px 0px 0px;
+    margin-left: 12px;
 }
-.waves .wave3{
-    height: 20px;
-    width: 10px;
-    background-color: #98c1d9;
-    position: absolute;
-    bottom: 0;
+.waves .wave:nth-child(3){
+    height: 40px;
     right: 0;
-    transition: 0.3 linear;
-    border-radius: 3px 3px 0px 0px;
 }
-.master-play:active .wave1{
-    animation: waves 0.5s linear infinite;
-}
-.master-play:active .wave2{
-    animation: waves 0.5s linear infinite;
-}
-.master-play:active .wave3{
+#master-play:active .wave .active1{
     animation: waves 0.5s linear infinite;
 }
 @keyframes waves{
@@ -124,7 +107,7 @@ nav{
         height: 40px;
     }
 }
-.master-play .play-details{
+#master-play .play-details{
     width: 150px;
     height: 100%;
     display: flex;
@@ -132,25 +115,25 @@ nav{
     justify-content: space-between;
     margin-left: 50px;
 }
-.master-play .play-details img{
+#master-play .play-details img{
     width: 50px;
     height: 50px;
 }
-.master-play .play-details #title{
+#master-play .play-details #title{
     display: flex;
     align-items: center;
     flex-direction: column;
 }
-.master-play .play-details #title p{
+#master-play .play-details #title p{
     color: #e0fbfc;
     font-weight: 400;
     font-size: 20px;
 }
-.master-play .play-details #title #subtitle{
+#master-play .play-details #title #subtitle{
     color: #adb5bd;
     font-size: 10px;
 }
-.master-play .controls{
+#master-play .controls{
     height: 100%;
     width: 200px;
     display: flex;
@@ -158,11 +141,11 @@ nav{
     justify-content: space-evenly;
     margin-left: 50px;
 }
-.master-play .controls .bi{
+#master-play .controls .bi{
     font-size: 1.7rem;
     color: #e0fbfc;
 }
-.master-play .seek-bar{
+#master-play .seek-bar{
     width: 100%;
     height: 100%;
     margin-left: 50px;
@@ -170,24 +153,24 @@ nav{
     align-items: center;
     justify-content: space-evenly;
 }
-.master-play .seek-bar #start-time{
+#master-play .seek-bar #start-time{
     font-size: 1rem;
     color: #e0fbfc;
     font-weight: 400;
 }
-.master-play .seek-bar #end-time{
+#master-play .seek-bar #end-time{
     font-size: 1rem;
     color: #e0fbfc;
     font-weight: 400;
 }
-.master-play .seek-bar .bar{
+#master-play .seek-bar .bar{
     position: relative;
     width: 50%;
     height: 3px;
     background-color: #011627;
     margin: 0px 15px 0px 10px;
 }
-.master-play .seek-bar .bar .bar2{
+#master-play .seek-bar .bar .bar2{
     position: absolute;
     width: 50%;
     height: 100%;
@@ -195,7 +178,7 @@ nav{
     background-color: #ee6c4d;
     transition: all 0.3s ease;
 }
-.master-play .bar input{
+#master-play .bar input{
     position: absolute;
     width: 100%;
     top: -7px;
@@ -205,8 +188,8 @@ nav{
     opacity: 0;
 }
 .song-body{
-    height: 100%;
-    border: 1px solid red;
+    height: 1600px;
+    /* border: 1px solid red; */
     margin-top: 70px;
     display: flex;
     flex-direction: column;
@@ -240,20 +223,52 @@ nav{
     width: 100%;
     height: fit-content;
     display: flex;
+    flex-direction: column;
 }
 .song-body .pop-songs .head{
     width: 100%;
     height: fit-content;
     display: flex;
     align-items: center;
-    justify-content: space-between;
     margin-top: 20px;
 }
 .song-body .pop-songs .head h1{
     color: #98c1d9;
     font-size: 2rem;
 }
-.song-body .pop-songs .head .bi{
-    color: #98c1d9;
-    font-size: 2rem;
+.song-body .pop-songs .songs{
+    width: 100%;
+    height: 250px;
+    display: flex;
+    margin-top: 20px;
+    overflow: auto;
+    scroll-behavior: smooth;
+    gap: 5px;
 }
+.pop-songs .pop-songs .songs .songItem{
+    min-width: 100px;
+    height: 200px;
+    display: flex;
+    flex-direction: column;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    overflow: hidden;
+}
+.pop-songs .songs .songItem img{
+    width: 100px;
+    height: 140px;
+}
+.pop-songs .songs .songItem #song-title{
+   font-size: 1rem;
+   color: #98c1d9;
+   text-overflow: ellipsis;
+}
+.pop-songs .songs .songItem #song-artist{
+    font-size: 0.8rem;
+    color: #2b2d42;
+    text-overflow: ellipsis;
+ }
+ .pop-songs .songs .songItem:hover{
+    transform: translateY(-10px);
+ }
+ 
