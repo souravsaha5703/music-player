@@ -328,6 +328,8 @@ let index=0;
 let poster_master=document.getElementById('poster-master');
 let stitle=document.getElementById('stitle');
 let subtitle=document.getElementById('subtitle');
+let master_play=document.getElementById('master-play');
+let playicon=document.getElementById('play');
 
 Array.from(document.getElementsByClassName('songItem')).forEach((song,i)=>{
     song.getElementsByTagName('img')[0].src=songs[i].poster;
@@ -336,7 +338,12 @@ Array.from(document.getElementsByClassName('songItem')).forEach((song,i)=>{
     song.addEventListener('click',(e)=>{
         index=e.target.id;
         music.src=songs[index-1].songsrc;
+        poster_master.src=songs[index-1].poster;
+        stitle.innerText=songs[index-1].songName;
+        subtitle.innerText=songs[index-1].songArtist;
         music.play();
+        playicon.classList.remove('bi-play-fill');
+        playicon.classList.add('bi-pause-fill');
     });
 
     // song.addEventListener('click',(e)=>{
@@ -354,8 +361,7 @@ Array.from(document.getElementsByClassName('songItem')).forEach((song,i)=>{
 //     })
 // })
 
-let master_play=document.getElementById('master-play');
-let playicon=document.getElementById('play');
+
 playicon.addEventListener('click',()=>{
     if(music.pause || music.currentTime>=0){
         music.play();
