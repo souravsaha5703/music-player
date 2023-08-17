@@ -1,1 +1,1 @@
-# music-player app using html , css and javascript . You can play selected music easily.
+# Music Player Website using HTML CSS and JAVASCRIPT. You can play selected music easily.
